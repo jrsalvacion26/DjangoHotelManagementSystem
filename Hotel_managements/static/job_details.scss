@@ -1,0 +1,156 @@
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+.employee{
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 3rem;
+        h1{
+            font-size: clamp(1rem, 4.5vw, 2rem);
+        }
+
+
+        .guide{
+    
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: min(43vw, 30rem);
+            padding: 1.5rem;
+            border-radius: 7px;
+            h5{
+                font-weight: bolder;
+            }
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            table{
+             
+                border: 2px solid black;
+                width: min(23vw, 20rem);
+
+                thead{
+                
+                    tr{
+                        background: linear-gradient(240deg, #D3CCE3,#E9E4F0);
+                        
+                        th{
+                            border: 2px solid rgba(0, 0, 0, 0.339);
+                            text-align: center;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+                tbody{
+                    font-size: clamp(.6rem, 4.5vw, 1rem);
+                    font-weight: 700;
+                    
+                    tr{
+                        height: min(45vw, 6rem);
+                        td{
+                            border: 2px solid rgba(0, 0, 0, 0.339);
+                            text-align: center;
+                            vertical-align: middle;
+                            
+                            
+                            button{
+        
+                                font-size: clamp(.7rem, 2.5vw, .9rem);
+                                span{
+                                    color:black;
+                                }
+                            }
+                            
+                         
+                        }
+                        
+                    }
+                }
+            }
+        }
+    .tables{
+        
+        margin-top: 2rem;
+        border-radius: 11px;
+        overflow-x:auto;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 1rem;
+        width: min(80vw, 90rem);
+        height: min(40vw, 45rem);
+
+        .search{
+            display: flex;
+            justify-content: flex-end;
+            form{
+                input{
+                    width: min(32vw, 26rem);
+                    outline: none;
+                    padding: .3rem;
+                }
+            }
+        }
+
+        .pagination{
+            display: flex;
+            justify-content: center;
+        }
+        table{
+            
+            border-radius: 11px;
+            
+            width: min(80vw, 100%);
+            min-height: fit-content;
+            
+            thead{
+                
+                tr{
+                    background: linear-gradient(240deg, #D3CCE3,#E9E4F0);
+                    
+                    height: min(45vw, 6rem);
+                    th{
+                        border: 2px solid rgba(0, 0, 0, 0.339);
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+                }
+            }
+            tbody{
+                font-size: clamp(.6rem, 4.5vw, 1rem);
+                font-weight: 700;
+                
+                tr{
+                    height: min(45vw, 6rem);
+                    td{
+                        border: 2px solid rgba(0, 0, 0, 0.339);
+                        text-align: center;
+                        vertical-align: middle;
+                        
+                        
+                        button{
+    
+                            font-size: clamp(.7rem, 2.5vw, .9rem);
+                            span{
+                                color:black;
+                            }
+                        }
+                        
+                     
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    .form_valid{
+        display: flex;
+        background: red;
+    }
+    
+}

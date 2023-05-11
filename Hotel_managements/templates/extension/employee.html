@@ -1,0 +1,47 @@
+
+
+    {% if type == "hotel manager" %}
+        {% include '../jobs/hotel_manager.html' %}
+        
+
+    {% elif type == "front desk manager" %}
+        {% include '../jobs/front_desk.html' %}
+    {% elif type == "housekeeping manager" %}
+        {% include '../jobs/housekeeping_manager.html' %}
+    {% elif type == "food and beverage manager" %}
+        {% include '../jobs/food_beverage_manager.html' %}
+    {% elif type == "human resources manager" %}
+        {% include '../jobs/human_resources_manager.html' %}
+    {% elif type == "maintenance manager" %}
+        {% include '../jobs/maintenance_manager.html' %}
+    {% endif %}
+
+
+
+
+    <div class="leftbar">
+        <div class="left">
+          
+        <div class="date">
+            
+        </div>
+    </div>
+
+    <script>
+        const dt = document.getElementsByClassName('date')[0]
+
+        const currentDate = new Date()
+
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+        ];
+
+        const month = monthNames[currentDate.getMonth()]
+        const day = currentDate.getDate()
+        console.log(day)
+        const year = currentDate.getFullYear()
+
+
+        dt.innerHTML = "<h2>" + month + "</h2><h3>" + day + "</h3><h4>" + year + "</h4>";
+
+    </script>

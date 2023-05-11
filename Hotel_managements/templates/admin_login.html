@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200;1,500&display=swap" rel="stylesheet">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    <div class="box">
+        <h1 style="color:white;">Login As Admin</h1>
+        <div class="authentication">
+            {% if error_message %}
+                <p style="color: red;">{{ error_message }}</p>
+            {% endif %}
+            <form method="post" action="/admin_login/">
+                {% csrf_token %}
+                <label for="username">Username:</label>
+                <input type="text" name="admin_username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" required>
+    
+        
+                <br>
+                <div class="btn">
+                    <button type="submit">Login</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

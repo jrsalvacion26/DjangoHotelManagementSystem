@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    transition: .3s ease-in-out;
+
+}
+
+.darkmodes{
+        background: #121212;
+        color: white;
+
+        .room{
+            background: white;
+            color: black;
+        }
+        .checkin{
+            background: white;
+            color: black;
+        }
+    
+}
+
+
+
+
+
+.lightmode{
+    display: none;
+    flex-direction: column;
+}
+
+
+.hidden{
+    display: none;
+}
+
+.visible{
+    display: block;
+}
+
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    background: linear-gradient(130deg,#D3CCE3,#E9E4F0);
+
+    .logo{
+        margin-left: 1rem;
+        h3{
+            font-size: clamp(2rem, -1.5rem + 8vw, 3rem);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        p{
+            font-size: clamp(1rem, -1.5rem + 8vw, 1.4rem);
+            text-indent: 21px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    }
+
+    .user{
+        display: flex;
+        position: relative;
+        top: 1rem;
+        left: -3rem;
+        :hover{
+            cursor: pointer;
+        }
+        flex-direction: column;
+        .name{
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 1rem;
+            
+            span{
+                font-size: 3em;
+            }
+            p{
+                padding-top: .5rem;
+            }
+        }
+    }
+
+}
+
+.webpage{
+    display: flex;
+    
+    justify-content: space-between;
+
+    
+
+
+    .leftbar{
+        .left{
+            border-left: 2px solid black;
+            min-width: 30%;
+            width: 25rem;
+            
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+
+            background-image: url('hotel.jpg');
+            background-size: contain;
+            
+            .date{
+                border-top: 2px solid rgba(0, 0, 0, 0.175);
+                box-shadow: 1px 12px 12px 2px rgba(0, 0, 0, 0.574);
+                min-width: 20rem;
+                height: 16rem;
+                margin-top: 2rem;
+                border-radius: 11px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background: white;
+               
+                h3{
+                    font-size: 6rem;
+                    font-weight: 900;
+                    color: red;
+                }
+                
+            }
+        }
+    }
+    .boxes{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        
+        align-items: center;
+        .graph{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            min-width: 70rem;
+            padding: 2rem;
+            
+            border: 2px solid red;
+            border-radius: 11px !important;
+            min-height: 27rem;
+
+            .room_chart{
+                
+                #myChart{
+                    display: flex !important;
+                    
+                }
+            }
+
+            .rating_chart{
+                
+                
+            }
+        }
+
+        .optional{
+            display: flex;
+            gap: 12rem;
+            height: 38rem;
+            .room{
+                display: flex;
+                flex-direction: column;
+                border: 2px solid red;
+                border-radius: 11px;
+                height: 15rem;
+                min-width: 15%;
+                text-indent: 1rem;
+                width: 24rem;
+                
+                h1{
+                    text-align: center;
+                }
+                span{
+                    border-bottom: 2px solid black;
+                    border-top: 2px solid black;
+                    min-height:fit-content;
+                    height: 24%;
+                    padding-top:1rem;
+                    
+                }
+                p{
+                    text-indent: 3rem;
+                }
+    
+                
+                
+                
+            }
+            .checkin{
+                border: 2px solid red;
+                border-radius: 11px;
+                min-height: 14rem;
+                min-width: 17%;
+                width: 25rem;
+                height: 20rem;
+                position: relative;
+                top: 2%;
+               
+                h2{
+                    text-align: center;
+                }
+                .option{
+                    border-bottom: 2px solid black;
+                    border-top: 2px solid black;
+                    padding: 1rem;
+                }
+        
+                .price{
+                    margin-top: 1rem;
+                    .single{
+                        display: flex;
+                        justify-content: space-around;
+                        
+                    }
+                    .double{
+                        display: flex;
+                        justify-content: space-around;
+                    }
+                    .triple{
+                        display: flex;
+                        justify-content: space-around;
+                    }
+                }
+
+        
+        
+            }
+            
+        }
+       
+        
+    }
+    
+    
+    
+    
+    
+}
+
+i{
+    font-size: 13px;
+    text-align: center;
+    
+}

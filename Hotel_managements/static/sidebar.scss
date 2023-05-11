@@ -1,0 +1,163 @@
+
+
+
+.sidebar{
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    flex-direction: row;
+    .btn{
+        margin: 0;
+        white-space: normal;
+        span{   
+                position: absolute;
+                margin: 0;
+                font-size: 3rem;
+                font-weight: 800;
+                text-indent: 2rem;
+            }:hover{
+                color: red;
+                padding: 0;
+                transform: scale(1.2);
+                cursor: pointer;
+            }
+        }
+    
+    .bar{
+        border-right:2px solid black;
+        width: 5rem;
+        height: 100%;
+        transition: .4s ease-in-out;
+        background: linear-gradient(240deg, #D3CCE3,#E9E4F0);
+
+        ul{
+            
+            display: flex;
+            list-style: none;
+            flex-direction: column;
+            
+            
+            li{
+                display: flex;
+                flex-direction: row;
+                height: 10rem;
+                transition: .2s ease-in-out;
+
+                .linkin{
+                    display: flex;
+                    position: relative;
+                   
+                    top: 1rem;
+                    .darkmode{
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .lightmode{
+                        display: none;
+                        flex-direction: column;
+                    }
+                    button{
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        border: none;
+                        background: none;
+                    }
+                    
+                }
+                #nav{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    text-decoration: none;
+
+                    .links{
+                        display: flex;
+                        flex-direction: row; 
+                        
+                        color: black;
+                        
+                    }
+
+                    .link{
+                        display: none;
+                        font-size: clamp(1rem, -1.5rem + 8vw, 1rem);
+                        
+                    }
+                }
+                
+                span{
+                    display: flex;
+                    font-size: 2rem;
+                    justify-content: center;
+                    align-items: center;
+                    color: rgb(5, 5, 35);
+                    transition: .2s ease-in-out;
+
+                    
+                }.darkmodes{
+                    color: white;
+                }
+                :hover{
+                    transform: scale(1.1);
+                    cursor: pointer;
+                    color: red;
+                }
+            }
+        }
+    }
+   
+    .active{ 
+        width: 16rem; 
+
+       
+        #nav{
+            display: flex;
+            justify-content: flex-start !important;
+            position: relative;
+        }
+
+        li{
+            display: flex;
+            align-items: center;
+            text-indent: -10rem;
+
+            .linkin{
+                
+                .darkmode{
+                    display: flex;
+                    flex-direction: row !important;
+                    
+
+                }
+                .links{
+                    text-indent: 3.5rem;
+                    color: black !important;
+                }
+                .lightmode{
+                    display: none;
+                    flex-direction: row !important;
+                }
+                text-indent: 2rem !important;
+            }
+            .link{
+                display: flex !important;
+                text-indent: 4rem;
+                
+            }
+            span{
+                display: flex;
+                justify-content: flex-start !important;
+                text-indent: 2rem;
+            }:hover{
+                transform: scale(1) !important;
+            }
+            
+            
+            
+        }
+        
+    }
+
+}

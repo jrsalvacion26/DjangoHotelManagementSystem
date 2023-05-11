@@ -1,0 +1,133 @@
+.sidebar {
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.sidebar .btn {
+  margin: 0;
+  white-space: normal;
+}
+.sidebar .btn span {
+  position: absolute;
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 800;
+  text-indent: 2rem;
+}
+.sidebar .btn :hover {
+  color: red;
+  padding: 0;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.sidebar .bar {
+  border-right: 2px solid black;
+  width: 5rem;
+  height: 100%;
+  transition: 0.4s ease-in-out;
+  background: linear-gradient(240deg, #D3CCE3, #E9E4F0);
+}
+.sidebar .bar ul {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+}
+.sidebar .bar ul li {
+  display: flex;
+  flex-direction: row;
+  height: 10rem;
+  transition: 0.2s ease-in-out;
+}
+.sidebar .bar ul li .linkin {
+  display: flex;
+  position: relative;
+  top: 1rem;
+}
+.sidebar .bar ul li .linkin .darkmode {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar .bar ul li .linkin .lightmode {
+  display: none;
+  flex-direction: column;
+}
+.sidebar .bar ul li .linkin button {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: none;
+  background: none;
+}
+.sidebar .bar ul li #nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+}
+.sidebar .bar ul li #nav .links {
+  display: flex;
+  flex-direction: row;
+  color: black;
+}
+.sidebar .bar ul li #nav .link {
+  display: none;
+  font-size: clamp(1rem, -1.5rem + 8vw, 1rem);
+}
+.sidebar .bar ul li span {
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  color: rgb(5, 5, 35);
+  transition: 0.2s ease-in-out;
+}
+.sidebar .bar ul li .darkmodes {
+  color: white;
+}
+.sidebar .bar ul li :hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  color: red;
+}
+.sidebar .active {
+  width: 16rem;
+}
+.sidebar .active #nav {
+  display: flex;
+  justify-content: flex-start !important;
+  position: relative;
+}
+.sidebar .active li {
+  display: flex;
+  align-items: center;
+  text-indent: -10rem;
+}
+.sidebar .active li .linkin {
+  text-indent: 2rem !important;
+}
+.sidebar .active li .linkin .darkmode {
+  display: flex;
+  flex-direction: row !important;
+}
+.sidebar .active li .linkin .links {
+  text-indent: 3.5rem;
+  color: black !important;
+}
+.sidebar .active li .linkin .lightmode {
+  display: none;
+  flex-direction: row !important;
+}
+.sidebar .active li .link {
+  display: flex !important;
+  text-indent: 4rem;
+}
+.sidebar .active li span {
+  display: flex;
+  justify-content: flex-start !important;
+  text-indent: 2rem;
+}
+.sidebar .active li :hover {
+  transform: scale(1) !important;
+}/*# sourceMappingURL=sidebar.css.map */

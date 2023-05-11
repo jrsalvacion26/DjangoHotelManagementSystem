@@ -1,0 +1,31 @@
+<div id="header">
+
+    <div class="logo">
+        <h3>Plaza</h3>
+        <p>De Hotel</p>
+    </div>
+    <div class="user">
+        <div class="name">
+            <span class="material-symbols-rounded" onclick="showDropdown()">account_circle</span>
+            <p>{{name}}</p>
+        </div>
+        <div id="dropdown" style="display: none;">
+            <form id="logout-form" action="{% url 'Logout' %}" method="POST" >
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showDropdown() {
+        var dropdown = document.getElementById("dropdown");
+        if (dropdown.style.display === "none") {
+            dropdown.style.display = "block";
+        } else {
+            dropdown.style.display = "none";
+        }
+    }
+  
+</script>

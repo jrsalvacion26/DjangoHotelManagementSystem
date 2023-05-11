@@ -1,0 +1,203 @@
+<div class="boxes">
+    <div class="optional">
+      <div class="room">
+        <h1>Today Status:</h1>
+        <span>
+          <p>{{ check_in_left }} Customer are Checkin</p>
+        </span>
+      
+        <h3>Room Use:</h3>
+        <p>Single: {{single_room}} / 6</p>
+        <p>Double: {{double_room}} / 6</p>
+        <p>Triple: {{triple_room}} / 8</p>
+    
+        
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}" style="color: red;">{{ message }}</div>
+        {% endfor %}
+      </div>
+      
+      <div class="checkin">
+        <h2>Room Price:</h2>
+    
+        <div class="option">
+          <form method="post" action="{% url 'reservation'%}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+        <div class="price">
+          <div class="single">
+            <h5>Single Occu:</h5>
+            <h5>1000</h5>
+          </div>
+          <div class="double">
+            <h5>Double Occu:</h5>
+            <h5>2000</h5>
+          </div>
+          <div class="triple">
+            <h5>Triple Occu:</h5>
+            <h5>3000</h5>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+
+
+    <div class="graph">
+
+      <div class="room_chart">
+        <h1 style="text-align: center;">Types Of Room That Use</h1>
+        <canvas id="myChart"></canvas>
+      </div>
+      <div class="rating_chart">
+        <h1>Customer Rate</h1>
+        <canvas id="rate_chart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="leftbar">
+    <div class="left">
+      
+      <div class="date">
+        
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+
+     // Set a timer for 5 seconds
+  setTimeout(function(){
+    // Find the message element
+    let message = document.querySelector('.alert');
+    // If the message exists
+    if(message){
+      // Remove the message element
+      message.remove();
+    }
+  }, 2000);
+
+
+  function updateQuantity() {
+        let roomType = document.getElementById("id_room_type").value;
+        let quantityField = document.getElementById("id_Quantity");
+        if (roomType == "single") {
+            quantityField.value = 1200;
+        } else if (roomType == "double") {
+            quantityField.value = 2000;
+        } else if (roomType == "triple") {
+            quantityField.value = 3000;
+        }
+    }
+    document.getElementById("id_room_type").onchange = updateQuantity;
+
+
+const dt = document.getElementsByClassName('date')[0]
+
+const currentDate = new Date()
+
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
+
+const month = monthNames[currentDate.getMonth()]
+const day = currentDate.getDate()
+console.log(day)
+const year = currentDate.getFullYear()
+
+
+dt.innerHTML = "<h2>" + month + "</h2><h3>" + day + "</h3><h4>" + year + "</h4>";
+
+
+var ctx = document.getElementById('myChart').getContext('2d');
+
+
+Single = {{Single}}
+
+Double = {{Double}}
+
+Triple = {{Triple}}
+
+
+const config = new Chart(ctx,{
+  type: 'doughnut',
+  data: {
+    
+    labels: ['Single', 'Double', 'Triple'],
+        datasets: [{
+            
+            data: [Single, Double, Triple],
+            backgroundColor: [
+              'rgba(29, 241, 181, 0.57)',
+              'rgba(147, 148, 253, 0.57)',
+              'rgba(252, 116, 116, 0.57)',
+                
+            ],
+            borderColor: [
+            'rgba(89, 99, 236, 0.8)',
+            'rgba(89, 99, 236, 0.8)',
+            'rgba(89, 99, 236, 0.8)',
+                
+            ],
+            borderWidth: 1
+        }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Types Of Reservation That Use'
+      }
+    },
+    aspectRatio: -1.4 / -1
+  },
+});
+
+
+
+var rate = document.getElementById('rate_chart').getContext('2d');
+console.log(rate)
+
+const configs= new Chart(rate,{
+  type: 'doughnut',
+  data: {
+    
+    labels: ['Satisfied', 'Happy', 'Unsatisfied'],
+        datasets: [{
+            
+            data: [Single, Double, Triple],
+            backgroundColor: [
+              'rgba(29, 241, 181, 0.57)',
+              'rgba(147, 148, 253, 0.57)',
+              'rgba(252, 116, 116, 0.57)',
+                
+            ],
+            borderColor: [
+            'rgba(89, 99, 236, 0.8)',
+            'rgba(89, 99, 236, 0.8)',
+            'rgba(89, 99, 236, 0.8)',
+                
+            ],
+            borderWidth: 1
+        }]
+  },
+  options: {
+    plugins: {
+      title: {
+        display: true,
+        text: 'Chart.js Stacked Line/Bar Chart'
+      }
+    },
+    aspectRatio: -1 / -1
+  },
+});
+  </script>

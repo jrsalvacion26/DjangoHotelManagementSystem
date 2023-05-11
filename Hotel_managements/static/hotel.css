@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.box .reservation {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: min(40vw, 22rem);
+  width: min(34vw, 41rem);
+}
+.box .reservation .reserv {
+  padding: 0.4rem;
+  font-size: clamp(0.4rem, 2.4vw, 0.6rem);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.box .checkin_guest {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: min(40vw, 22rem);
+  width: min(34vw, 41rem);
+}
+.box .checkin_guest .check {
+  font-size: clamp(0.4rem, 2.4vw, 0.6rem);
+  display: flex;
+  padding: 0.4rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  justify-content: space-between;
+}
+
+.info_guest {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.info_guest .type {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: min(40vw, 22rem);
+  width: min(34vw, 41rem);
+}
+.info_guest .type .reserv_type {
+  font-size: clamp(0.4rem, 2.4vw, 0.6rem);
+  display: flex;
+  padding: 0.4rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.info_guest .housekeeping {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: min(40vw, 22rem);
+  width: min(34vw, 41rem);
+}
+.info_guest .housekeeping .house {
+  font-size: clamp(0.4rem, 2.4vw, 0.6rem);
+  display: flex;
+  padding: 0.4rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}/*# sourceMappingURL=hotel.css.map */

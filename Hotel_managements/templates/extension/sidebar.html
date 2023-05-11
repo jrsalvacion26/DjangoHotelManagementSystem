@@ -1,0 +1,145 @@
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200" rel="stylesheet" />
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'sidebar.css'%}">
+    <link rel="stylesheet" href="{% static 'index.css'%}">
+
+ 
+  
+    <div class="sidebar">
+        <div class="bar">
+          <ul>
+            <li>
+              <div class="linkin">
+              
+                <div class="darkmode" style="display: flex;flex-direction:column;">
+                  <button onclick="toggleDarkMode()">
+                    <span class="material-symbols-outlined icon">dark_mode</span>
+                  </button>
+                  <p class="links" style="font-size: clamp(.8rem, 1vw, .9rem); font-weight:700; ">darkmode</p>
+                </div>
+      
+                <div class="lightmode">
+                  <button onclick="toggleLightMode()">
+                    <span class="material-symbols-outlined">light_mode</span>
+                  </button>
+                  <p class="links" style="font-size: clamp(.8rem, 1vw, .9rem); font-weight:700; color:black">lightmode</p>
+                </div>
+            </div>
+            </li>
+           
+            <li>
+              <a href="/dashboard/" id="nav">
+                <div class="links">
+                  <span class="material-symbols-rounded" >Dashboard</span>
+                  <p class="link">Dashboard</p>
+                </div>
+              </a>
+            </li>
+
+            {% if type == "housekeeping manager"  or accounts == "customer" %}
+            <li>
+              
+              <a href="/service/" id="nav">
+                <div class="links">
+                  <span class="material-symbols-rounded">cleaning_services</span>
+                  <p  class="link">Services</p>
+                </div>
+              </a>
+            </li>
+            {% endif %}
+          
+            {% if accounts == 'employee'%}
+            <li>
+              <a href=" /booking/"  id="nav">
+                <div class="links">
+                  <span class="material-symbols-rounded">bookmarks</span>
+                  <p class="link">Booking</p>
+                </div>
+              </a>
+            </li>
+
+            
+            
+            <li>
+              <a href="/employee/" id="nav">
+                <div class="links">
+                  <span class="material-symbols-rounded">badge</span>
+                  <p class="link">Employee</p>
+                </div>
+              </a>
+            </li>
+    
+            <li>
+              <a href="/payroll/" id="nav">
+                <div class="links">
+                  <span class="material-symbols-rounded disable-select">currency_exchange</span>
+                  <p class="link">Payroll</p>
+                </div>
+              </a>
+            </li>
+    
+            <li>
+              <a href="/admin_panel/" id="nav">
+                <div class="links">
+                  <span class="material-symbols-outlined">admin_panel_settings</span>
+                  <p class="link">Admin Panel</p>
+                </div>
+              </a>
+            </li>
+            {% endif%}
+          
+          </ul>
+        </div>
+        <div class="btn">
+          <span class=" button material-symbols-rounded">menu</span>
+        </div>
+        
+      </div>
+    
+    
+    <script>
+        const sidebar = document.querySelector('.bar')
+        const button = document.querySelector('.button')
+        
+        
+
+        button.addEventListener('click', () => {
+            console.log('ckck')
+            sidebar.classList.toggle('active')
+        })
+        
+        isDarkMode = true
+        function toggleDarkMode() {
+            
+            let darkmode = document.querySelector("body");
+        
+            darkmode.classList.add("darkmodes");
+        
+            if(isDarkMode){
+             
+            document.getElementsByClassName("darkmode")[0].style.display = 'none'
+            document.getElementsByClassName('lightmode')[0].style.display = 'flex'
+        
+            }
+           
+           
+        
+        }
+        
+        function toggleLightMode() {
+        let lightmode = document.querySelector("body");
+        lightmode.classList.remove("darkmodes");
+        islightmode = true
+        if(islightmode){
+            document.getElementsByClassName("darkmode")[0].style.display = 'flex'
+            document.getElementsByClassName('lightmode')[0].style.display = 'none'
+        }
+        
+        }
+      
+    </script>

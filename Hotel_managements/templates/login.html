@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200;1,500&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+
+
+<div class="background"></div>
+
+
+
+
+<div class="box">
+    <div class="btn_option">
+        <button class="customer">Customer</button>
+        <button class="employee">Employee</button>
+    </div>
+    
+    <div class="authentication">
+
+        <div class="load">
+            <svg viewBox="25 25 50 50" class="loading">
+            <circle r="20" cy="50" cx="50"></circle>
+          </svg>
+        </div>
+        <h1>Customer</h1>
+        {% if error_message %}
+            <p style="color: red;">{{ error_message }}</p>
+        {% endif %}
+        <form method="post" action="{% url 'Login' %}">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+
+            <a href="register/">Register</a>    
+            <br>
+            <div class="btn">
+                <button type="submit">Login</button>
+            </div>
+            
+        </form>
+    </div>
+
+    <div class="Employee">
+        <h1>Employee</h1>
+        {% if error_message %}
+            <p style="color: red;">{{ error_message }}</p>
+        {% endif %}
+        <form method="post" action="{% url 'employee_login' %}">
+            {% csrf_token %}
+            <label for="username">Employee Username:</label>
+            <input type="text" name="emp_username" required>
+            <br>
+            <label for="password">Employee Password:</label>
+            <input type="password" name="emp_password" required>
+
+              
+            <br>
+            <div class="btn">
+                <button type="submit">Login</button>
+            </div>
+            
+        </form>
+    </div>
+
+   
+</div>
+
+
+
+
+<script>
+    const customerAuthentication = document.querySelector(".authentication");
+    const employeeAuthentication = document.querySelector(".Employee");
+    const customerButton = document.querySelector(".customer");
+    const employeeButton = document.querySelector(".employee");
+  
+
+    let bg = true
+    customerButton.addEventListener("click", () => {
+        
+        customerAuthentication.style.display = "flex";
+        customerButton.style.background = "red"
+        employeeButton.style.background = "white"
+        employeeAuthentication.style.display = "none";
+        
+    });
+  
+    employeeButton.addEventListener("click", () => {
+      customerAuthentication.style.display = "none";
+      employeeAuthentication.style.display = "flex";
+      customerButton.style.background = "white"
+      employeeButton.style.background = "red"
+    });
+
+    const form = document.querySelector('form');
+    const circle = document.querySelector('.loading');
+    
+    form.addEventListener('submit', function(event) {
+      console.log('Form submitted!');
+      if (!document.readyState || document.readyState === 'complete') {
+        // Page has already finished loading, so immediately show the loading animation again
+        circle.classList.add('show');
+      } else {
+        // Wait for the window.onload event to show the loading animation
+        window.addEventListener('load', function() {
+          console.log('Page loaded!');
+          circle.classList.add('show');
+        });
+      }
+    });
+    
+    // Show/hide the loading animation on window load
+    window.addEventListener('load', function() {
+      console.log('Page loaded!');
+      circle.classList.remove('show');
+    });
+    
+    window.addEventListener('beforeunload', function() {
+      console.log('Page unloading!');
+      circle.classList.add('show');
+    });
+ 
+  </script>
+
+  
+  
+</body>
+</html>

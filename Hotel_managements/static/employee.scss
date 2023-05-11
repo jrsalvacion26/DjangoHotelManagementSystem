@@ -1,0 +1,95 @@
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.bar{
+    
+    display: flex;
+    justify-content: flex-end ;
+    height: fit-content;
+}
+
+.boxers{
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(25rem,1fr));
+    gap: 2rem;
+    width:80%;
+    margin: auto;
+    .employee{
+        
+        width: 100%;
+        a{
+            text-decoration: none;
+            font-size: clamp(1rem, 1.5vw, 1.5rem);
+        }
+
+        .hotel{
+            border-radius: 11px;
+            background: #BA0F30;
+            box-shadow: rgba(246, 243, 243, 0.595) 0px 3px 8px;
+            
+            height: 12rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .front{
+            box-shadow: rgba(246, 243, 243, 0.595) 0px 3px 8px;
+            border-radius: 11px;
+            background: #3B0404;
+            
+            height: 12rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .housekeeping{
+            box-shadow: rgba(246, 243, 243, 0.595) 0px 3px 8px;
+            border-radius: 11px;
+            background: #211522;
+            height: 12rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .food{
+            box-shadow: rgba(246, 243, 243, 0.595) 0px 3px 8px;
+            background: #122620;
+            border-radius: 11px;
+            height: 12rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .human{
+            box-shadow: rgba(246, 243, 243, 0.595) 0px 3px 8px;
+            background: #67595E;
+            border-radius: 11px;
+            height: 12rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .maintenance{
+            box-shadow: rgba(246, 243, 243, 0.595) 0px 3px 8px;
+            background: #05445E ;
+            border-radius: 11px;
+            height: 12rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }:hover{
+        transform: scale(1.03);
+        transition: .3s ease-in-out;
+        cursor: pointer;
+    }
+}
+
+
+.graph{
+    
+}

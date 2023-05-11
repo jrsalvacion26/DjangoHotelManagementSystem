@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200;1,500&display=swap" rel="stylesheet"> 
+    {% load static %}
+
+    
+    <link rel="stylesheet" href="{% static 'payroll.css'%}">
+
+    <title>Document</title>
+</head>
+<body>
+    {% include './extension/header.html' %}
+
+
+    
+
+<div class="payrolls">
+    {% include './extension/sidebar.html' %}
+    <div class="payroll" >
+    
+        <h1 class="text" style="text-align: center; color:red;"></h1>
+
+        
+        <div class="profile">
+            <div class="adjust">
+                <button class="material-symbols-outlined">add_a_photo</button>
+                <span></span>
+            </div>
+            
+            <div class="info">
+
+                <div class="int">
+                    <div class="input">
+                        <label for="">Name:</label>
+                        <input type="text" value="{{name}}" disabled>
+                    </div>
+                    <div class="input">
+                        <label for="">Email:</label>
+                        <input type="text" value="{{email}}" disabled>
+                    </div>
+                    <div class="input">
+                        <label for="">Job:</label>
+                        <input type="text" value="{{type}}" disabled>
+                    </div>
+                    <div class="input">
+                        <label for="">Level:</label>
+                        <input type="text" value="{{level}}" disabled>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="salary">
+            <div class="money">
+                <div class="date">
+                    <h5>Period:</h5>
+                    <p>when admin give the money / after 30 days</p>
+                </div>
+                <div class="salaries">
+                    <h5>Total salary for this month: </h5>
+                    <p>₱{{salary}}</p>
+                    
+                </div>
+
+                <div class="claim">
+                    <h5>Payment Method:</h5>
+                    <div class="btn">
+                        
+                        <form action="{% url 'payment_method' emp_id=emp_id %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="transfer" name="payment_method">
+                            <button onclick="transfer()">Bank Transfer</button>
+                        </form>
+                        
+                        <p>or</p>
+                        <form action="{% url 'payment_method'  emp_id=emp_id %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="cheque" name="payment_method">
+                            <button onclick="cheque()">Cheque</button>
+                        </form>
+
+                       
+                    </div>
+                    <a href="" download>Download the form</a>
+                </div>
+            </div>
+            <div class="tax">
+                <h5>Taxes and Deduction:</h5>
+            </div>
+            <div class="calendar">
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+<script>
+const dt = document.getElementsByClassName('calendar')[0]
+
+const currentDate = new Date()
+
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
+
+const month = monthNames[currentDate.getMonth()]
+const day = currentDate.getDate()
+console.log(day)
+const year = currentDate.getFullYear()
+
+
+dt.innerHTML = "<h2>" + month + "</h2><h3>" + day + "</h3><h4>" + year + "</h4>";
+
+
+const texts = document.getElementsByClassName("text");
+function transfer() {
+  for (let i = 0; i < texts.length; i++) {
+    setTimeout(function() {
+      texts[i].innerHTML = "Thank your hardwork, break a leg next month";
+      let opacity = 1;
+      const fadeOut = setInterval(function() {
+        if (opacity <= 0.1) {
+          clearInterval(fadeOut);
+          texts[i].parentNode.removeChild(texts[i]);
+        }
+        texts[i].style.opacity = opacity;
+        opacity -= 0.1;
+      }, 100);
+    }, 3000 * i);
+  }
+}
+
+
+function cheque(){
+    transfer()
+}
+
+</script>
+</body>
+</html>

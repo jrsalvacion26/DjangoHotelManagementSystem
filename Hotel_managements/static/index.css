@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  transition: 0.3s ease-in-out;
+}
+
+.darkmodes {
+  background: #121212;
+  color: white;
+}
+.darkmodes .room {
+  background: white;
+  color: black;
+}
+.darkmodes .checkin {
+  background: white;
+  color: black;
+}
+
+.lightmode {
+  display: none;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  background: linear-gradient(130deg, #D3CCE3, #E9E4F0);
+}
+#header .logo {
+  margin-left: 1rem;
+}
+#header .logo h3 {
+  font-size: clamp(2rem, -1.5rem + 8vw, 3rem);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+#header .logo p {
+  font-size: clamp(1rem, -1.5rem + 8vw, 1.4rem);
+  text-indent: 21px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+#header .user {
+  display: flex;
+  position: relative;
+  top: 1rem;
+  left: -3rem;
+  flex-direction: column;
+}
+#header .user :hover {
+  cursor: pointer;
+}
+#header .user .name {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+}
+#header .user .name span {
+  font-size: 3em;
+}
+#header .user .name p {
+  padding-top: 0.5rem;
+}
+
+.webpage {
+  display: flex;
+  justify-content: space-between;
+}
+.webpage .leftbar .left {
+  border-left: 2px solid black;
+  min-width: 30%;
+  width: 25rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-image: url("hotel.jpg");
+  background-size: contain;
+}
+.webpage .leftbar .left .date {
+  border-top: 2px solid rgba(0, 0, 0, 0.175);
+  box-shadow: 1px 12px 12px 2px rgba(0, 0, 0, 0.574);
+  min-width: 20rem;
+  height: 16rem;
+  margin-top: 2rem;
+  border-radius: 11px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+.webpage .leftbar .left .date h3 {
+  font-size: 6rem;
+  font-weight: 900;
+  color: red;
+}
+.webpage .boxes {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.webpage .boxes .graph {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: 70rem;
+  padding: 2rem;
+  border: 2px solid red;
+  border-radius: 11px !important;
+  min-height: 27rem;
+}
+.webpage .boxes .graph .room_chart #myChart {
+  display: flex !important;
+}
+.webpage .boxes .optional {
+  display: flex;
+  gap: 12rem;
+  height: 38rem;
+}
+.webpage .boxes .optional .room {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+  border-radius: 11px;
+  height: 15rem;
+  min-width: 15%;
+  text-indent: 1rem;
+  width: 24rem;
+}
+.webpage .boxes .optional .room h1 {
+  text-align: center;
+}
+.webpage .boxes .optional .room span {
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  height: 24%;
+  padding-top: 1rem;
+}
+.webpage .boxes .optional .room p {
+  text-indent: 3rem;
+}
+.webpage .boxes .optional .checkin {
+  border: 2px solid red;
+  border-radius: 11px;
+  min-height: 14rem;
+  min-width: 17%;
+  width: 25rem;
+  height: 20rem;
+  position: relative;
+  top: 2%;
+}
+.webpage .boxes .optional .checkin h2 {
+  text-align: center;
+}
+.webpage .boxes .optional .checkin .option {
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  padding: 1rem;
+}
+.webpage .boxes .optional .checkin .price {
+  margin-top: 1rem;
+}
+.webpage .boxes .optional .checkin .price .single {
+  display: flex;
+  justify-content: space-around;
+}
+.webpage .boxes .optional .checkin .price .double {
+  display: flex;
+  justify-content: space-around;
+}
+.webpage .boxes .optional .checkin .price .triple {
+  display: flex;
+  justify-content: space-around;
+}
+
+i {
+  font-size: 13px;
+  text-align: center;
+}/*# sourceMappingURL=index.css.map */
